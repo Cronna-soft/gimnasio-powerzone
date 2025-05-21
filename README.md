@@ -2,7 +2,7 @@
 
 Bienvenido a **PowerZone**, una plataforma digital diseñada para facilitar la presencia en línea de gimnasios sin la necesidad de sitios web complejos.
 
-## 🌐 [Visitar el Sitio Web](https://cronna-soft.github.io/gimnasio-powerzone)
+## 🌐 [Visitar el Sitio Web](cronna-soft.github.io/gimnasio-powerzone)
 
 ### Descripción
 **PowerZone** es una **landing page optimizada** para gimnasios, diseñada para proporcionar una experiencia clara, directa y accesible. Basado en tecnologías fundamentales del desarrollo web, este proyecto busca ofrecer una solución funcional y efectiva:
