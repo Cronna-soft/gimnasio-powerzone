@@ -1,0 +1,728 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"); /*BOOTSTRAP ICON*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap'); /*FONTS GOOGLE*/
+
+:root {
+	--colorPrimario: #0077b6;
+	--colorSecundario: #222831;
+	--colorFuente: #eee;
+	--detalles: #00adb5;
+	--fuentePrincipal: 'Montserrat', sans-serif;
+	--fuenteTitulo: "Oswald", serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--fuentePrincipal);
+	list-style: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #dedede;
+	color: var(--colorSecundario);
+}
+
+.detalle-color { color: var(--colorPrimario) }
+
+.linea-estilo {
+	display: inline-block;
+	margin-bottom: 4px;
+	margin-right: 10px;
+	height: 3px;
+	width: 40px;
+	background-color: var(--colorPrimario);
+}
+
+/*HEADER*/
+/*NAVBAR*/
+.bg-body-tertiary {
+	background-color: var(--colorPrimario) !important;
+}
+
+.navbar-brand {
+	display: none;
+	@media screen and (min-width: 1200px) { display: block; }
+}
+
+.navbar-logotipo {
+	width: 250px;
+	height: 100px;
+}
+
+.navbar-toggler {
+	margin: 0 auto;
+	padding: 0;
+}
+
+.navbar-collapse {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.navbar-nav {
+	margin-left: auto;
+	text-align: right;
+}
+
+/*MAIN*/
+/*HERO*/
+.container-hero {
+	min-height: 80vh;
+	height: auto;
+    padding: 20px;
+	padding-bottom: 5vh;
+    gap: 15px; /* Espacio entre elementos */
+	background-image: url('../assets/images/principal-movil.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.hero-item { color: var(--colorFuente); }
+
+.hero-titulo {
+	font-family: var(--fuenteTitulo);
+	font-size: 4rem;
+}
+
+.hero-subtitulo {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.btn {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: var(--fuenteTitulo);
+	font-size: 1.5rem;
+}
+
+.btn-primary {
+	background-color: var(--colorPrimario);
+}
+
+.hero-cinta {
+	width: 100%;
+	height: 10vh;
+	overflow: hidden;
+	background: #222;
+	white-space: nowrap;
+	position: relative;
+    display: flex;
+    align-items: center; 
+}
+
+.hero-cinta-contenido {
+	display: flex;
+    gap: 40px;
+    animation: mover 10s linear infinite;
+    width: max-content;
+}
+
+.hero-cinta-contenido .hero-cinta-item {
+	width: auto; /* Ajusta el tamaño según necesites */
+	height: auto;
+}
+
+.hero-cinta-item {
+	margin: 0;
+    max-height: 80%; /* Para que no ocupe toda la cinta */
+    width: auto; /* Ajusta sin deformar */
+    object-fit: contain; /* Asegura que se vea completo */
+}
+
+h4.hero-cinta-item {
+	font-family: var(--fuenteTitulo);
+	font-size: 3rem;
+	color: var(--colorFuente);
+}
+
+.cinta-principal {
+	color: var(--colorPrimario) !important;
+}
+
+.cinta-secundario {
+	color: var(--detalles) !important;
+}
+
+@keyframes mover {
+	from {
+	  transform: translateX(0);
+	}
+	to {
+	  transform: translateX(-50%);
+	}
+}
+
+/*BENEFICIOS*/
+.container-beneficios {
+	flex-direction: column;
+	margin-top: 50px;
+/*	background-image: url('');*/
+/*	background-position: center;*/
+/*	background-repeat: no-repeat;*/
+/*	background-size: cover;*/
+}
+
+.beneficios-titulo > .linea-estilo { margin-bottom: 14px }
+
+.beneficios-titulo {
+	margin-bottom: 50px;
+	font-family: var(--fuenteTitulo);
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.beneficios-cards {
+	display: flex;
+	flex-direction: column;
+  gap: 15px; /* Espacio entre tarjetas */
+  align-items: center; /* Centra en móviles */
+  padding: 0;
+}
+
+.beneficios-item {
+    margin: 25px auto;
+    padding: 20px 0;
+	&:hover {
+		.card, .beneficios-icon [class*="icon-"]:before {
+			color: var(--detalles);
+			cursor: pointer;
+			background-color: var(--colorSecundario);
+		}
+		.card-text {
+			color: var(--detalles);
+		}
+	}
+}
+
+.beneficios-icon {
+	margin-bottom: 20px;
+	text-align: center;
+
+}
+
+.beneficios-icon [class*="icon-"]:before {
+	padding: 20px;
+	font-size: 2.5rem;
+	color: var(--colorFuente);
+	background-color: var(--colorPrimario);
+	border-radius: 50px;
+}
+
+.card-beneficios {
+	margin: 0 auto;
+	width: 18rem;/*288px*/
+	min-height: 380px;
+	background-color: var(--colorPrimario);
+	border: 1px solid;
+}
+
+.card-img-top {
+	object-fit: cover;
+	object-position: center;
+}
+
+.card-beneficios-text {
+	font-family: var(--fuenteTitulo);
+	font-size: 2rem;
+	color: var(--colorFuente);
+}
+
+/*SOBRE NOSOTROS*/
+.container-nosotros {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	min-height: 50vh;
+}
+
+.nosotros-imagen { display: none; }
+.nosotros-imagen img { object-fit: cover; }
+
+.nosotros-titulo { 
+	font-family: var(--fuenteTitulo);
+	font-size: 1.3rem;
+	color: var(--colorPrimario);
+}
+
+.nosotros-subtitulo {
+	font-size: 2.2rem;
+	font-weight: bold;
+}
+
+.nosotros-descripcion {
+	font-size: 1.1rem;
+}
+
+.nosotros-listado {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+}
+
+.nosotros-listado {
+	font-family: var(--fuenteTitulo);
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.info{
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: center;
+} 
+
+.info-item {
+	justify-content: center;
+	margin: 0;
+	font-family: var(--fuenteTitulo);
+	font-size: 4rem;
+	font-weight: bolder;
+}
+
+
+/*PLANES*/
+.container-planes {
+	min-height: 50vh;
+	background-color: var(--colorSecundario);
+}
+
+.card-md-vista { display: none; }
+
+.carousel-control-planes { background-color: black; }
+
+.carousel-inner { margin: 0 auto; }
+
+.card-planes {
+	margin: 20px auto;
+	width: auto;
+	text-align: center;
+	color: var(--colorFuente);
+	background-color: #343a40;
+
+	&:hover {
+		.card-planes-body {
+			background-color: var(--colorFuente);
+			color: var(--colorSecundario);
+		}
+		.planes-precios {
+			color: var(--colorSecundario);
+			border-color: var(--colorSecundario);
+		}
+		.planes-titulos { color: var(--colorSecundario); }
+		.card-header { background-color: #ccc; }
+	} 
+}
+
+
+.card-header .planes-titulos {
+	font-family: var(--fuenteTitulo);
+	font-size: 2rem;
+}
+
+.card-planes-text { padding: 0; }
+
+.card-planes-text li {
+	font-weight: bold;
+	& .bi { font-size: 2rem; }
+	& .bi-check { color: #16c60c; }
+	& .bi-x{ color: #b60000; }
+}
+
+.card-planes-text p { font-size: 1.1rem; }
+
+.planes-precios {
+	color: var(--colorFuente);
+	border-color: var(--colorFuente);
+
+	&:hover, &:active, &:disabled {
+		color: var(--colorSecundario);
+		background-color: var(--colorFuente);
+		border-color: var(--colorFuente);
+	}
+}
+
+/*EQUIPO*/
+#equipo {
+	padding-bottom: 20px;
+	border-bottom: 50px solid var(--colorPrimario);
+}
+
+.container-equipo {
+	margin: 50px auto;
+	min-height: 40vh;
+	height: auto;
+	width: auto;
+}
+
+.equipo-encabezado { margin-bottom: 50px }
+
+.equipo-titulo {
+	font-family: var(--fuenteTitulo);
+	font-size: 1.8rem;
+	font-weight: bolder;
+	color: var(--colorPrimario);
+} .equipo-titulo > .linea-estilo { margin-bottom: 8px }
+
+.equipo-subtitulo { 
+	font-size: 2.5rem;
+}
+
+.equipo-galeria {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+	gap: 10px;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 15px;
+  width: 300px;
+	@media screen and (min-width: 375px) { width: 360px; gap: 15px } /*Ajuste para pantallas de 375px*/
+	@media screen and (min-width: 425px) { width: 410px; gap: 20px } /*Ajuste para pantallas de 425px*/
+}
+
+.equipo-item-galeria {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  margin: 10px;
+  width: auto; /* ancho para móvil */
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  border-radius: 0 0 15px 15px;
+}
+
+.equipo-item-galeria figure {
+  width: 300px;
+  height: 350px; /* alto para móvil */
+  object-fit: cover;
+}
+
+.equipo-imagen {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.equipo-descripcion { height: 5.5rem; }
+
+.equipo-nombre {
+	margin-top: 30px;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*PRODUCTOS*/
+#productos {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.container-productos {
+	width: auto;
+	height: auto;
+}
+
+.productos-titulo { 
+	margin-bottom: 50px;
+	font-family: var(--fuenteTitulo);
+	font-size: 3rem;
+	text-align: center;
+	&:after {
+		display: block;
+		content: '';
+		margin: 0 auto;
+		margin-top: 20px;
+		height: 3px;
+		width: auto;
+		background-color: black;
+	}
+}
+
+.carousel-productos-imagen {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/*CONTACTO*/
+.container-contacto {
+	max-width: 1100px;
+	min-height: 200px;
+	padding: 20px;
+}
+
+.contacto {
+ 	padding: 20px;
+	border-radius: 10px;
+ 	box-shadow: 0px 1px 4px 1px var(--detalles);
+}
+
+.contacto-item {
+	width: 100%;
+	display: flex;
+/*	flex-direction: column;*/
+	align-items: center;
+	text-align: center;
+}
+
+[class*="contacto-"] { color: var(--colorSecundario); }
+
+.contacto-lista {
+	text-align: left !important;
+	padding: 0;
+}
+
+.contacto-titulo h3 {
+	font-family: var(--fuenteTitulo);
+}
+
+.contacto-descripcion p {
+	font-size: 1.2rem;
+}
+
+.lista-horarios {
+	padding: 0;
+}
+
+.contacto-boton {
+	font-weight: bold;
+	background-color: transparent;
+	border: 2px solid var(--colorSecundario);
+	padding: 10px 2rem;
+	margin: 10px;
+	border-radius: 100px;
+	transition: all .2s ease-in-out;
+
+	&:hover { background-color: var(--colorPrimario); }
+ .contacto-boton i {
+/*		color: white;*/
+		font-size: 1.3rem;
+		transition: all 0.2s ease-in-out;
+		&:hover i { color: black; }
+ }
+
+}
+
+
+/*FOOTER*/
+footer h3, footer li, footer p, footer span, i {
+	color: var(--colorFuente);
+}
+
+#footer {
+	height: 100%;
+	width: 100%;
+	padding-top: 10px;
+	background-color: #303030;
+	border-top: 1px solid #f5f5f5;
+}
+
+.item-footer {
+	margin: 25px 10px;
+}
+
+.item-footer .titulo-footer {
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: 2px solid white;
+}
+
+.item-footer li {
+	list-style: none;
+	&:hover {
+		color: var(--colorFuente);
+	}
+}
+
+.item-footer li a {
+	text-decoration: none;
+
+	&:link {
+		color: white;
+	}
+
+	&:visited {
+		color: white;
+	}
+	&:hover {
+		color: var(--colorFuente);
+	}
+}
+
+.item-footer .redes-footer {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.item-footer [class*="bi bi-"] {
+	font-size: 35px;
+	&:hover {
+		color: var(--colorFuente);
+	}
+}
+
+.derechos {
+	height: 10vh;
+	text-align: center;
+	background-color: black;
+}
+
+/*BOTON SUBIR*/
+#btnSubir {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--colorPrimario);
+  color: var(--colorFuente);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  display: none; /* Oculto al inicio */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  opacity: .5;
+  &:hover { background-color: var(--detalles); }
+}
+
+/*TABLETS*/
+@media screen and (min-width: 768px) {
+	/*HERO*/
+	.container-hero {
+		background-image: url('../assets/images/principal.png');
+		background-position: right;
+	}
+	/*BENEFICIOS*/
+	.beneficios-titulo {
+		margin-left: 50px;
+	}
+	/*PLANES*/
+	.carousel-inner { width: 65%; }
+	.card-header .planes-titulos, li p i.bi, .planes-precios { font-size: 2.3rem; }
+	.card-planes-text p { font-size: 1.5rem; }
+	/*SOBRE NOSOTROS*/
+	.info{
+		flex-direction: row;
+		justify-content: space-around;
+		gap: 10px;
+	}
+	/*EQUIPO*/
+	.equipo-galeria { width: 700px; gap: 30px }
+	/*PRODUCTOS*/
+	.productos-titulo:after { width: 40%; } 
+	/*FOOTER*/
+	.footer {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: stretch;
+	}
+	.item-footer {
+		margin: 20px 0;
+
+		width: 300px;
+		height: 300px;
+	}
+	.item-footer:nth-child(3) {
+		margin: 20px 0;
+		width: 	200px;
+	}
+}
+@media screen and (min-width: 1024px) {
+	/*NAVBAR*/
+	.nav-link { font-size: 1.7rem; }
+	/*HERO*/
+	.hero-titulo { font-size: 5rem; }
+	/*BENEFICIOS*/
+	.beneficios-cards { flex-direction: row; }
+	/*SOBRE NOSOTROS*/
+	.nosotros {
+		display: flex;
+		flex-direction: row;
+	}
+	.row { justify-content: space-around; }	
+	.nosotros-item {
+		gap: 20px;
+		margin: auto 0;
+		width: 48%;
+	}
+	.nosotros-imagen, .nosotros-imagen figure img {
+		display: block;
+		margin: 0 auto;
+		height: auto;
+		width: 95%;
+	}
+	.nosotros-subtitulo { font-size: 2.5rem; }
+	.info-item { font-size: 4.7rem }
+	.info-titulo { font-size: 1.2rem }
+	/*EQUIPO*/
+	.equipo-galeria { width: 950px; }
+}
+
+/*PC*/
+@media screen and (min-width: 1280px) {
+	/*HERO*/	
+	.container-hero { background-position: center; }
+	.hero-titulo { font-size: 6rem; }
+	.hero-subtitulo { font-size: 2.7rem; }
+	.btn { font-size: 2rem; }
+	/*BENEFICIOS*/
+	.beneficios-item{
+		width: auto;
+		height: auto;
+	} 
+	.card-beneficios {
+		width: 300px;
+		height: 350px;
+	}
+	/*PLANES*/
+	.container-planes { padding: 20px; }
+	.carousel-planes { display: none; }
+	.card-md-vista {
+		display: flex;
+		justify-content: center;
+		align-items: stretch;
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+	.card-planes { width: 31.33%; }
+	/*SOBRE NOSOTROS*/
+	.nosotros-item { gap:30px }
+	.nosotros-descripcion, .nosotros-listado li { font-size: 1.3rem }
+	/*EQUIPO*/
+	.equipo-galeria { 
+		width: auto; 
+	}
+	/*PRODUCTOS*/
+	.carousel-productos-item {
+		width: 850px;
+		height: 500px;
+	}
+}
+@media screen and (min-width: 1536px) {
+	/*BENEFICIOS*/
+	.card-beneficios {
+		width: 350px;
+		height: 450px;
+	}
+	.card-beneficios-text { font-size: 2.7rem; }
+	/*SOBRE NOSOTROS*/
+	.nosotros-item { gap: 30px }
+	/*EQUIPO*/
+	.equipo-galeria { 
+		min-width: 1400px;
+		width: auto; 
+	}
+}
+@media screen and (min-width: 2000px) { .card-md-vista { margin: 0 auto; width:60% } }
